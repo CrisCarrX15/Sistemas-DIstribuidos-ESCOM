@@ -1,0 +1,734 @@
+import java.util.Scanner;
+
+// Permite la entrada de datos
+public class Grados {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        Scanner grados = new Scanner(System.in);
+        // Sirve para la entrada de los datos en este caso los grados
+        double gradosC, gradosF;
+        System.out.println("Ingrese los grados Celcius");
+        gradosC = grados.nextDouble();
+        // Agarra los datos que estan dentos de la variable de Gradosc
+        gradosF = (gradosC * 9 / 5) + 32;
+        // A partir de los datos en los gradosC se hara la conversion a Farenheit
+        System.out.println(" Los grados Celcius " + gradosC + " es igual a " + gradosF + " grados Farenheit");
+    }
+}
+***************************************************************************************************************************
+import java.util.Scanner;
+
+// Permite la entrada de datos
+public class Fraccion {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int num1;
+        int num2;
+        int den1;
+        int den2;
+        double resultado1, resultado2;
+        double dec;
+        System.out.println("Ingrese el numerador de la fraccion 1");
+        num1 = scan.nextInt();
+        System.out.println("Ingrese el denominador de la fraccion 1");
+        den1 = scan.nextInt();
+        System.out.println("Ingrese el numerador de la fraccion 2");
+        num2 = scan.nextInt();
+        System.out.println("Ingrese el denominador de la fraccion 2");
+        den2 = scan.nextInt();
+
+        resultado1 = num1 * num2;
+        // Operacion1
+        resultado2 = den1 * den2;
+        // Operacion 2
+        dec = resultado1 / resultado2;
+        // Decimal
+        System.out.println("El resultado es igual a " + resultado1 + "/" + resultado2);
+        System.out.println("El resultado en decimal es igual a " + dec);
+
+    }
+}
+****************************************************************************************************************
+import java.util.Scanner;
+
+public class Radio {
+
+    public static void main(String[] args) {
+        Scanner area = new Scanner(System.in);
+        Scanner per = new Scanner(System.in);
+        // Sirve para la entrada de los datos
+        double a, p;
+        double r;
+        System.out.println("Ingrese el area del triangulo");
+        a = area.nextDouble();
+        System.out.println("Ingrese el perimetro del triangulo");
+        p = per.nextDouble();
+        r = (a * 2) / p;
+        // Formula de radio
+        System.out.println("El radio de la circuferencias es " + r);
+    }
+}
+*********************************************************************************************************
+import java.util.Scanner;
+
+public class Universidad {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int edad;
+        char Genero;
+
+        System.out.println("Ingrese su genero (H/M)");
+        Genero = scan.next().charAt(0);
+        System.out.println("Ingrse su edad");
+        edad = scan.nextInt();
+        // Extraer datod
+        System.out.println("Edificio");
+
+        if (Genero == 'H') {
+            if (edad == 18)
+                System.out.println("A");
+            if (Genero == 'H')
+                if (edad >= 19 && edad <= 22)
+                    System.out.println("C");
+            if (Genero == 'H')
+                if (edad >= 23)
+                    System.out.println("E1");
+        }
+        if (Genero == 'M') {
+            if (edad == 18)
+                System.out.println("B");
+            if (Genero == 'M')
+                if (edad >= 19 && edad <= 22)
+                    System.out.println("D");
+            if (Genero == 'M')
+                if (edad >= 23)
+                    System.out.println("E2");
+        }
+    }
+}
+********************************************************************************************************
+import java.util.Scanner;
+
+public class Vacaciones {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int años, dias, dias2;
+
+        System.out.println("Ingrese los años que a trbajado en la empresa");
+        años = scan.nextInt();
+        System.out.println("Sus dias de vacaciones son:");
+        if (años >= 1 && años <= 5)
+            System.out.println("5");
+        else if (años >= 6 && años <= 10)
+            System.out.println("10");
+        else if (años >= 11 && años <= 19) {
+            dias = años;
+            System.out.println(dias);
+        } else if (años >= 20 && años <= 40) {
+            dias2 = años + 2;
+            System.out.println(dias2);
+        }
+
+    }
+
+}
+*******************************************************************************************************************
+import java.util.Scanner;
+
+public class Caseta {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int eje, ejeadd;
+        int extra = 50;
+
+        System.out.println("Ingrese el numero de ejes");
+        eje = scan.nextInt();
+        if (eje == 1)
+            System.out.println("Paguen $20");
+        else if (eje == 2)
+            System.out.println("Pague $40");
+        else if (eje == 3)
+            System.out.println("Pague $60");
+        else if (eje >= 4 && eje <= 6)
+            System.out.println("Pague $250");
+        else if (eje >= 7) {
+            ejeadd = 250 + extra * (eje - 6);
+            System.out.println("Pague $ " + ejeadd);
+        }
+    }
+
+}
+***************************************************************************************************************
+import java.util.Scanner;
+
+public class Luz {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int con, kW;
+
+        System.out.println("Cuenta con contrato de...");
+        System.out.println(" Hogar");
+        System.out.println(" Negocio");
+        con = scan.nextInt();
+        System.out.print("Ingrese los kW consumidos: ");
+        kW = scan.nextInt();
+
+        switch (con) {
+            case 1 -> {
+                System.out.println("Total a pagar $" + calculaTPagar(kW));
+            }
+            case 2 -> {
+                System.out.println("Total a pagar $" + kW * 5);
+            }
+        }
+    }
+
+    public static double calculaTPagar(int kW) {
+        double costoTotal = 0;
+
+        if (kW > 250) {
+            costoTotal = 250 * 0.65;
+            kW -= 250;
+            if (kW > 250) {
+                costoTotal += 250 * 0.85;
+                kW -= 250;
+                if (kW > 250) {
+                    costoTotal += 250 * 1.50;
+                    kW -= 250;
+                    if (kW > 250) {
+                        costoTotal += 250 * 2.50;
+                        kW -= 250;
+                        if (kW > 250) {
+                            costoTotal += 250 * 3.00;
+                        } else {
+                            costoTotal += kW * 3.00;
+
+                        }
+                    } else {
+                        costoTotal += kW * 2.50;
+
+                    }
+                } else {
+                    costoTotal += kW * 1.50;
+
+                }
+            } else {
+                costoTotal += kW * 0.85;
+
+            }
+        } else {
+            costoTotal += kW * 0.65;
+
+        }
+        return costoTotal;
+
+    }
+
+}
+********************************************************************************************************************************
+import java.util.Scanner;
+
+public class Numeros {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int a, b, c;
+        System.out.println("Ingrese el primer numero");
+        a = scan.nextInt();
+        System.out.println("Ingrese el segundo numero");
+        b = scan.nextInt();
+        System.out.println("Ingrese el tercer numero");
+        c = scan.nextInt();
+        System.out.println("El primer valor seria");
+        if (a >= b && a >= c) {
+            System.out.println(a);
+            if (a <= b && a >= c)
+                System.out.println(b);
+            if (a <= c && a >= b)
+                System.out.println(c);
+        }
+        System.out.println("El segundo valor seria");
+        if (b >= a && b >= c) {
+            System.out.println(b);
+            if (b <= a && b >= c)
+                System.out.println(a);
+            if (b <= c && b >= a)
+                System.out.println(c);
+        }
+        System.out.println("El tercer valor seria");
+        if (c >= b && c >= a) {
+            System.out.println(c);
+            if (c <= b && c >= a)
+                System.out.println(b);
+            if (c <= a && c >= b)
+                System.out.println(a);
+        }
+
+    }
+
+}
+************************************************************************************************************
+import java.util.Scanner;
+
+public class Capicua {
+    public static void main(String[] args) {
+        int num, cifra, aux;
+        int inverso = 0;
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Ingresa un numero entre 0 y 9999 ");
+        num = scan.nextInt();
+
+        switch (num) {
+
+            case 1 -> {
+                aux = num;
+                if (aux >= 0 && aux <= 9) {
+                    cifra = aux % 1;
+                    inverso = inverso * 1 + cifra;
+                    aux = aux / 1;
+                }
+
+            }
+
+            case 2 -> {
+                aux = num;
+                if (aux >= 10 && aux <= 99) {
+                    cifra = aux % 10;
+                    inverso = inverso * 10 + cifra;
+                    aux = aux / 10;
+                }
+
+            }
+            case 3 -> {
+                aux = num;
+                if (aux >= 100 && aux <= 999) {
+                    cifra = aux % 100;
+                    inverso = inverso * 100 + cifra;
+                    aux = aux  / 100;
+                }
+
+            }
+            case 4 -> {
+                aux = num;
+                if (aux >= 1000 && aux <= 9999) {
+                    cifra = aux % 1000;
+                    inverso = inverso * 1000 + cifra;
+                    aux = aux / 1000;
+                }
+
+            }
+
+        }
+        if (num == inverso) {
+            System.out.println("Es capicua");
+        } else {
+            System.out.println("No es capicua");
+        }
+
+    }
+
+}
+*********************************************************************************************************************************
+import java.util.Scanner;
+
+public class Entero {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num;
+        int suma = 0;
+        int aux = 0;
+
+        System.out.println("Ingrese un número entero: ");
+        num = scan.nextInt();
+        for (int i = 1; i <= num; i++) {
+            suma = num + i;
+            aux = suma + num;
+        }
+        System.out.println(aux);
+
+    }
+
+}
+******************************************************************************************************************
+import java.util.Scanner;
+
+public class Cubo {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int ultimo, aux;
+        int sumaCubo = 0;
+
+        for (int i = 1; i <= 5000; i++) {
+            sumaCubo = 0;
+            aux = i;
+
+            for (int j = 0; j < 3; j++) {
+                ultimo = aux % 10;
+                sumaCubo += (ultimo * ultimo * ultimo);
+                aux /= 10;
+            }
+
+            if (sumaCubo == i)
+                System.out.println(i + " = suma del cubo de sus dígitos");
+        }
+    }
+
+}
+*********************************************************************************************************************
+public class Perfecto {
+    public static void main(String[] args) {
+        int suma;
+        for (int i = 1; i <= 10000; i++) {
+            suma = 0;
+            for (int j = 1; j < i; j++) {
+                if (i % j == 0) {
+                    suma = suma + j;
+                }
+
+            }
+            if (i == suma) {
+                System.out.println(i);
+            }
+        }
+
+    }
+
+}
+*******************************************************************************************************************
+public class Ahorro {
+
+    public static void main(String[] args) {
+
+        int tiempo = 20;
+        double Ahorro = 0;
+        double rendimiento = 0;
+        for (int i = 0; i < tiempo; i++)
+
+            Ahorro = Ahorro + 10000;
+
+        rendimiento = (double) (Ahorro * 0.05);
+        Ahorro = Ahorro + rendimiento;
+
+        System.out.println("Ahorros totales después de 20 años: " + Ahorro);
+    }
+
+}
+*****************************************************************************************************************************
+import java.util.Scanner;
+
+public class Salto {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int x, y;
+        System.out.println("Ingrese un número x: ");
+        x = scan.nextInt();
+        System.out.println("Ingrese un número y: ");
+        y = scan.nextInt();
+        while (x < 200) {
+            System.out.print(x + ", ");
+            x = x + y;
+        }
+    }
+}
+*******************************************************************************************************************************
+import java.util.Scanner;
+
+public class Aleatorio {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int num;
+        int i = 1;
+        int x = 1;
+
+        num = (int) (Math.random() * 100 + 1);
+
+        System.out.println("Adivine el número entre 1 a 100 (introduzca 0 para salir)");
+
+        while (x != num && x != 0) {
+            System.out.print("Intento " + i + ": ");
+            x = scan.nextInt();
+            i++;
+
+            if (x > num)
+                System.out.println("Te pasaste, es menor");
+            else if (x < num)
+                System.out.println("Un poco mas, es mayor");
+            else
+                System.out.println("Felicidades !! El número era: " + num);
+        }
+    }
+
+}
+********************************************************************************************************************************
+import java.util.Scanner;
+
+public class Leer {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double num = 1;
+        double x = 0;
+        double suma = 0, promedio = 0;
+        while (num != 0) {
+            System.out.println("Escriba un numero distinto a 0");
+            num = scan.nextInt();
+            if (num != 0) {
+                suma = suma + num;
+                x = x + 1;
+                promedio = suma / x;
+
+            }
+
+        }
+
+        System.out.println("El promedio es igual a " + promedio);
+
+    }
+
+}
+**************************************************************************************************************************************************
+import java.util.Scanner;
+
+public class Inverso {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int arreglo[];
+        arreglo = new int[10];
+
+        System.out.println("Ingrese 10 números enteros:");
+        for (int i = 0; i < arreglo.length; i++)
+            arreglo[i] = scan.nextInt();
+
+        System.out.println("Los números ingresados son:");
+        for (int j = 0; j < arreglo.length; j++)
+            System.out.println(arreglo[j]);
+    }
+
+}
+*******************************************************************************************************************
+import java.util.Scanner;
+
+public class Ciudades {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        String arreglo[] = new String[10];
+        String comparador;
+
+        System.out.println("Ingrese el nombre de 10 cuidades ");
+        for (int i = 0; i < arreglo.length; i++)
+            arreglo[i] = scan.nextLine();
+        comparador = arreglo[0];
+        for (int i = 0; i < arreglo.length; i++) {
+            if (arreglo[i].length() > comparador.length()) {
+                comparador = arreglo[i];
+                System.out.println("La ciudad con el nombre mas largo es: " + comparador);
+            }
+        }
+    }
+}
+
+*******************************************************************************************************************
+import java.util.Scanner;
+
+public class Desendente {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int arreglo[];
+        arreglo = new int[10];
+        int comparador;
+
+        System.out.println("Ingrese 10 numeros");
+        for (int i = 0; i < arreglo.length; i++)
+            arreglo[i] = scan.nextInt();
+        comparador = arreglo[0];
+        for (int i = 0; i < arreglo.length; i++)
+            if (arreglo[i] >= comparador) {
+                comparador = arreglo[i];
+                System.out.println("El arreglo es decendente");
+            } else {
+                System.out.println("El arreglo no es decendente");
+            }
+
+    }
+
+}
+*******************************************************************************************************************
+import java.util.Scanner;
+
+public class Posicion {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int arreglo[], ultimo;
+        arreglo = new int[10];
+
+        System.out.println("Ingrese 10 números en el arreglo");
+        for (int i = 0; i < arreglo.length; i++)
+            arreglo[i] = scan.nextInt();
+
+        ultimo = arreglo[arreglo.length - 1];
+        for (int p = arreglo.length - 1; p > 0; p--)
+            arreglo[p] = arreglo[p - 1];
+
+        arreglo[0] = ultimo;
+
+        System.out.println("Desplazando...s");
+        for (int j = 0; j < arreglo.length; j++)
+            System.out.print(arreglo[j] + " ");
+    }
+}
+*******************************************************************************************************************************
+import java.util.Scanner;
+
+public class Bidimensional {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int arreglo[][], suma = 0;
+        arreglo = new int[5][5];
+
+        System.out.println("Ingrese los elementos de la matriz 5x5: ");
+        for (int i = 0; i < 5; i++)
+            for (int j = 0; j < 5; j++)
+                arreglo[i][j] = scan.nextInt();
+
+        System.out.println("\nArreglo bidimensional 5x5: ");
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(arreglo[i][j] + " ");
+            }
+            System.out.println("");
+        }
+
+        suma = arreglo[0][0] + arreglo[1][1] + arreglo[2][2] + arreglo[3][3] + arreglo[4][4];
+        System.out.println("\nLa suma de la diagonal principal es: " + suma);
+    }
+}
+**************************************************************************************************************************
+import java.util.Scanner;
+
+public class Matriz {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n;
+
+        System.out.println("Escribe el tamaño de las 2 matrices");
+        n = scan.nextInt();
+        int matriz1[][] = new int[n][n];
+        int matriz2[][] = new int[n][n];
+
+        int resultado[][] = new int[n][n];
+
+        for (int i = 0; i < matriz1.length; i++) {
+            for (int j = 0; j < matriz1[0].length; j++) {
+
+                System.out.println("Escribe el valor para la fila " + i + " y columna " + j + " de la matriz 1");
+                matriz1[i][j] = scan.nextInt();
+                System.out.println("Escribe el valor para la fila " + i + " y columna " + j + " de la matriz 2");
+                matriz2[i][j] = scan.nextInt();
+
+            }
+        }
+
+        System.out.println("\nMultiplicación de matrices");
+        resultado = multiplicarMatrices(matriz1, matriz2);
+
+        for (int i = 0; i < resultado.length; i++) {
+            for (int j = 0; j < resultado[i].length; j++) {
+                System.out.print(resultado[i][j] + " ");
+
+            }
+            System.out.println("");
+        }
+    }
+
+    public static int[][] multiplicarMatrices(int[][] a, int[][] b) {
+        int[][] c = new int[a.length][b[0].length];
+
+        if (a[0].length == b.length) {
+            for (int i = 0; i < a.length; i++) {
+                for (int j = 0; j < b[0].length; j++) {
+                    for (int k = 0; k < a[0].length; k++) {
+                        c[i][j] += a[i][k] * b[k][j];
+                    }
+                }
+            }
+        }
+        return c;
+    }
+}
+**************************************************************************************************************************
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Impares {
+    public static void main(String[] args) {
+        String Entrada = "Entrada.txt";
+        String Salida = "Salida.txt";
+        int contador = 0;
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Entrada));
+            FileWriter writer = new FileWriter(Salida);
+
+            String line = reader.readLine();
+            while (line != null) {
+                contador++; // Saber donde esta y que linea se quedo
+                if (contador % 2 == 1) {
+                    writer.write(line + "\n");
+                }
+                line = reader.readLine();
+            }
+
+            reader.close();
+            writer.close();
+
+            System.out.println("Archivo procesado ");
+        } catch (IOException e) { //Por si no se encuentra el archivo
+            System.out.println("No se pudo procesar el archivo " + e.getMessage());
+        }
+    }
+}
+***************************************************************************************************************************
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Letra {
+    public static void main(String[] args) throws IOException {
+        String Entrada = "Entrada.txt";
+
+        int contador = 0;
+        String letras[] = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q",
+                "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+
+        BufferedReader reader = new BufferedReader(new FileReader(Entrada));
+
+        String line = reader.readLine();
+        for (int i = 0; i < letras.length; i++) {
+            while ((line = reader.readLine()) != null) {
+
+                if (line == letras[i]) {
+                    contador++;
+
+                }
+            }
+            System.out.println("Cantidad de veces que se encuentra una letra " + contador);
+            reader.close();
+        }
+
+    }
+}
